@@ -6,18 +6,16 @@ def maxArea(height):
     right = 0
     area=0
     # for i in height:
-    while k!=0 or j>=len(height):
-        if height[j] >= height[k]:
-            lowest_side = height[k]
-        else:
+    while j < k:
+        if height[j] <= height[k]:
             lowest_side = height[j]
+        else:
+            lowest_side = height[k]
         if area < lowest_side * (k-j):
             area = lowest_side * (k-j)
-        if j > k:
-            k+=1
+        if height[j] > height[k]:
+            k-=1
         else:
             j+=1
     return area
-
-height = [1,8,6,2,5,4,8,3,7]
-maxArea(height)
+                
