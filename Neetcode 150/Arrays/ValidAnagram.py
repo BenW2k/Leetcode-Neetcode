@@ -1,10 +1,15 @@
+import collections
+
 def isAnagram(s, t):
-    s_list = list(s)
-    t_list = list(t)
-    s_list.sort()
-    t_list.sort()
-    if t_list == s_list:
-        return True
-    else:
-        return False
+    map = collections.defaultdict(int)
+
+    for char in s:
+        map[char]+=1
+    for char in t:
+        map[char]-=1
+    
+    for val in map.values():
+        if val != 0:
+            return False
+    return True
 isAnagram(s, t)
