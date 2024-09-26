@@ -30,3 +30,14 @@ class Solution(object):
         while n > 0:
             nums1[last] = nums2[n]
             n, last = n - 1, last - 1 #interesting comprehension.
+
+    def alt_solution(self, nums1, m, nums2, n):
+
+        end = m + n - 1 # Creates end point
+
+        for i in range(n): # Iterates over the length of nums2
+            nums1[end] = nums2[n - 1]
+            end -= 1
+            n -= 1
+        nums1.sort() # sorts after replacing all of the 0's with nums2 numbers. (because native functions are likely more efficient than making you're own lol)
+    
