@@ -21,4 +21,17 @@ class Solution(object):
             else: #else it deletes nums[i] and doesn't increment i because nums[i] is now the next num in the list
                 del nums[i]
         return len(nums) # returns k
+
+class Alt_Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        j = 1 #counter
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1]: # List is ordered so you can compare nums[i] to previous index to see if its a duplicate.
+                nums[j] = nums[i]
+                j += 1
+        return j
         
