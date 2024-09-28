@@ -29,3 +29,34 @@ class Solution(object):
                 else:
                     j += 1
         return output
+
+class 2ndSolution(object):
+    def threeSumBetter(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+
+        prerequisites:
+        two pointer: solution sets must not contain dupe sets
+        likely a process where dupes are not even checked.
+        """
+        # O(n^2) solution but increased efficiency compared to the solution above
+        output = []
+        nums.sort()
+        
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i-1]: #first checks if i isn't the first element (otherwise looking for i-1 will return index error)
+                continue # Then continues if nums[i] is the same as the element before it, because if so, the only potential solution would be a duplicate anyway.
+            j = i + 1
+            k = len(nums) - 1
+            while j < k:
+                if (nums[i] + nums[j] + nums[k]) > 0: # checks the other likely conditions first.
+                    k -= 1
+                elif (nums[i] + nums[j] + nums[k]) < 0:
+                    j += 1
+                else:
+                    output.append([nums[i], nums[j], nums[k]]) # appends, we know it wont be a duplicate because we've caught them already above.
+                    j += 1
+                    while nums[j] == nums[j-1] and j < k: # this is a similar concept to the check at the start of the for loop, basically moving across the pointer j
+                        j += 1 # until it is a unique number to avoid looping through duplicates.
+        return output
