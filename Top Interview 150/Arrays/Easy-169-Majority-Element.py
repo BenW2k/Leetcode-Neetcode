@@ -18,3 +18,19 @@ class Solution(object):
                 map[nums[i]] += 1
                 if map[nums[i]] > (len(nums) / 2):
                     return nums[i]
+                
+
+# Alt more simplistic solution
+# Just sorts the array and returns the number thats at the middle of the array (will always be the majority element)
+# Python's sort func is O(nLogn) and the mem comp is O(1) additional mem
+
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if len(nums) == 1:
+            return nums[0]
+        nums.sort()
+        return nums[len(nums) // 2]
