@@ -5,7 +5,9 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
-        i = 0
+        # essentially the code goes through the array and removes any element that is equal to our target val and increments the counter
+        # returns the finished array
+        i = 0 # initialises counter
         while i < len(nums):
             if nums[i] == val:
                 del nums[i]
