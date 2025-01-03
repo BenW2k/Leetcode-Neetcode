@@ -4,11 +4,11 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        l = 0
-        charSet = set()
-        res = 0
+        l = 0 # initialise left side
+        charSet = set() # set because they don't store duplicates
+        res = 0 #len of max substring
 
-        for r in range(len(s)):
+        for r in range(len(s)): # using r as the index, length
             while s[r] in charSet:
                 charSet.remove(s[l])
                 l += 1
