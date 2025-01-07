@@ -52,6 +52,20 @@ B.left = D
 B.right = E
 C.left = F
 
-pre_order(A)
-in_order(A)
-post_order(A)
+# pre_order(A)
+# in_order(A)
+# post_order(A)
+
+#Iterative DFS Pre order traversal Time: O(n), Space: O(n)
+# Tip: This may look counter-intuitive but you are appending the right node to the stack before the left node to keep the left-most nodes always at the top of the stack
+# while there are still left nodes to iterate through, once the left nodes are exhausted, the right nodes and their children will be traversed.
+
+def pre_order_iterative(node):
+    stk = [node]
+
+    while stk:
+        node = stk.pop()
+        print(node)
+        if node.right: stk.append(node.right)
+        if node.left: stk.append(node.left)
+pre_order_iterative(A)
