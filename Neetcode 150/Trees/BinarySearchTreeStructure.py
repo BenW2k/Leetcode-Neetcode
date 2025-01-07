@@ -68,7 +68,7 @@ def pre_order_iterative(node):
         print(node)
         if node.right: stk.append(node.right)
         if node.left: stk.append(node.left)
-pre_order_iterative(A)
+# pre_order_iterative(A)
 
 
 # BFS Level Order Traversal Time: O(n), Space: O(n)
@@ -82,8 +82,10 @@ def level_order(node):
     while q:
         node = q.popleft()
         print(node)
-        if node.left(): q.append(node.left)
+        if node.left: q.append(node.left)
         if node.right: q.append(node.right)
+
+level_order(A)
 
 # Searching a binary search tree
 
