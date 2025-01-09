@@ -97,6 +97,8 @@ def bst_search(node,target):
     if target < node.val: return bst_search(node.left, target)
     else: return bst_search(node.right, target)
 
+# Good to know:
+# When indexing an array breadth first, the index of the child node is 2i + 1 for left node and 2i + 2 for right i respectfully.
 
 
 
