@@ -4,8 +4,8 @@ class Solution(object):
         res, sol = [], []
 
         def backtrack(i):
-            if i == n:
-                res.append(sol[:])
+            if i == n: # this is how we know we're at a leaf node
+                res.append(sol[:]) # we append the sol[:] instead of just sol because sol is a reference to the sol object whereas sol[:] is a copy of the sol list
                 return
             
             #Don't pick nums[i]
@@ -17,5 +17,5 @@ class Solution(object):
             sol.pop()
 
         
-        backtrack(0)
+        backtrack(0) # this starts the backtracking function at 0
         return res
