@@ -1,4 +1,9 @@
-'''BFS
+'''
+
+Both are O(n) space and time
+
+
+BFS
 
 Commonly used when finding the shortest path 
 exploring all nodes at a given level
@@ -30,7 +35,8 @@ In - inbetween children
 Post - after children 
 
 Binary search trees are sorted binary trees such that everything on the left of a node is smaller than it and everything right of a node is greater than it
-Good at organising things and fast lookup times'''
+Good at organising things and fast lookup times
+BST lookup is O(log2n) - you're just doing binary search basically THIS IS ASSUMING THE TREE IS HEIGHT BALANCED, lopsided trees could be O(n)'''
 
 
 
