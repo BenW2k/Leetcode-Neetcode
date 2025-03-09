@@ -39,4 +39,44 @@ Good at organising things and fast lookup times
 BST lookup is O(log2n) - you're just doing binary search basically THIS IS ASSUMING THE TREE IS HEIGHT BALANCED, lopsided trees could be O(n)'''
 
 
+# Binary trees
+
+class TreeNode:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+    
+    def __str__(self):
+        return str(self.val)
+    
+
+# Recursive Pre Order Traversal (DFS)
+
+def pre_order(node):
+    if not node:
+        return
+    print(node)
+    pre_order(node.left)
+    pre_order(node.right)
+
+# Recursive In Order Traversal
+def in_order(node):
+    if not node:
+        return
+    
+    in_order(node.left)
+    print(node)
+    in_order(node.right)
+
+# Post order
+def post_order(node):
+    if not node:
+        return
+    in_order(node.left)
+    in_order(node.right)
+    print(node)
+
+
+        
 
