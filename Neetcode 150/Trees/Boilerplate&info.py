@@ -114,5 +114,15 @@ def search(node, target):
     return search(node.left, target) or search(node.right, target)
 
 
+# search BST
+def search_bst(node, target):
+    if not node:
+        return False
+    if node == target:
+        return True
+    
+    if target < node.val: return search_bst(node.left, target)
+    else: return search_bst(node.right, target)
+
         
 
