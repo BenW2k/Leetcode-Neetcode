@@ -77,6 +77,42 @@ def post_order(node):
     in_order(node.right)
     print(node)
 
+# Iterative Pre Order Traversal
+
+def pre_order_iterative(node):
+    stk = [node]
+    while stk:
+        node = stk.pop()
+        print(node) # We append the right side first because stacks are FILO and we want to go down the left side first
+        if node.right: stk.append(node.right)
+        if node.left: stk.append(node.left)
+
+
+# Level Order Traversal (BFS)
+
+from collections import deque
+
+def level_order(node):
+    q = deque()
+    q.append(node) # we have the root on there to begin with
+
+    while q:
+        node = q.popleft()
+        print(node) # FIFO so we append node left first
+        if node.left: q.append(node.left)
+        if node.right: q.append(node.right)
+
+
+# Check if a val exists with DFS
+
+def search(node, target):
+    if not node:
+        return False
+    if node == target:
+        return True
+    
+    return search(node.left, target) or search(node.right, target)
+
 
         
 
