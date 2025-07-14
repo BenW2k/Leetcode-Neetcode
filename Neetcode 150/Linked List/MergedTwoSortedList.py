@@ -13,6 +13,7 @@ class Solution:
             if list1.val < list2.val: 
                 curr.next = list1 # links current to list 1 by pointing curr.next to the current val of list1
                 curr = list1 #sets the current node in the new list to the node of list1
+                list1 = list1.next #moves to the next node in list1
             else:
                 curr.next = list2
                 curr = list2
