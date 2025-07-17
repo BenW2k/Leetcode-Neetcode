@@ -19,6 +19,6 @@ class Solution:
             right = dfs(curr.right)
 
             self.res = max(self.res, left + right) # We replace self.res if the diameter of the current tree is larger
-            return 1 + max(left, right) # this is the height of the tree that we're returning, its the height of the child trees + 1
+            return 1 + max(left, right) # this is the height of the tree that we're returning to the parent node, its the height of the child trees + 1
         dfs(root)
         return self.res
