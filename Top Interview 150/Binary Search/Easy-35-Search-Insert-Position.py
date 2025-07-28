@@ -12,7 +12,7 @@ class Solution(object):
         r = len(nums) - 1 # initialises right pointer at end of array
 
         while l <= r: #
-            mid = (l + r) // 2 # finds the middle element of the array
+            mid = l + ((r-l) // 2) # finds the middle element of the array
             if nums[mid] > target: # if it is larger than the target then we disregard the numbers larger than it and set the right pointer to the start of the list minus 1 
             # (because we just checked mid and know it isn't that)
                 r = mid - 1
