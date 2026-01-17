@@ -21,6 +21,8 @@ class Solution:
                     else:
                         rowZero = True
 
+
+        # We skip the first row and col for now to avoid changing our pointers (the first cols)
         for r in range(1, rows):
             for c in range(1, cols):
                 if matrix[0][c] == 0 or matrix[r][0] == 0:
